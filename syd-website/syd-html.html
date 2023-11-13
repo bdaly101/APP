@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Romantic Quote</title>
+<style>
+  body {
+    text-align: center;
+    padding: 50px;
+    font-family: 'Arial', sans-serif;
+  }
+  #quote {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #555;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<img id="dailyImage" src="path_to_your_image.jpg" alt="Romantic Image">
+<div id="quote"></div>
+
+<script>
+// Array of romantic quotes
+var quotes = [
+  "You are absolutely perfect, just the way you are.",
+  "With every breath I take, I love you more and more.",
+  // Add as many quotes as you want here
+];
+
+// Function to get a new quote each day
+function getDailyQuote() {
+  var today = new Date();
+  var index = today.getDate() % quotes.length; // Get a new quote index each day of the month
+  document.getElementById('quote').innerText = quotes[index];
+}
+
+// Call the function when the page loads
+window.onload = getDailyQuote;
+</script>
+
+</body>
+</html>
